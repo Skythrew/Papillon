@@ -3,6 +3,7 @@ import type { Account as PawdirecteAccount, Session as PawdirecteSession } from 
 import type { Client as ARDClient, Client as PawrdClient } from "pawrd";
 import { Client as TurboselfClient } from "turboself-api";
 import { Client as AliseClient, BookingDay } from "alise-api";
+import { Session as ClicEtMiamSession, Establishment as ClicEtMiamEstablishment } from "clicetmiam-api";
 import type ScolengoAPI from "scolengo-api";
 import {Configuration, Identification} from "ezly";
 import type MultiAPI from "esup-multi.js";
@@ -105,7 +106,8 @@ export enum AccountService {
   Onisep,
   Multi,
   Izly,
-  Alise
+  Alise,
+  ClicEtMiam
 }
 
 /**
@@ -217,6 +219,17 @@ export interface AliseAccount extends BaseExternalAccount {
   }
 }
 
+export interface ClicEtMiamAccount extends BaseExternalAccount {
+  service: AccountService.ClicEtMiam,
+  instance: undefined,
+  authentication: {
+    session: ClicEtMiamSession,
+    username: string,
+    password: string
+  },
+  favoriteSchool: ClicEtMiamEstablishment
+}
+
 export interface ARDAccount extends BaseExternalAccount {
   service: AccountService.ARD
   instance?: ARDClient
@@ -252,6 +265,7 @@ export type ExternalAccount = (
   | ARDAccount
   | IzlyAccount
   | AliseAccount
+  | ClicEtMiamAccount
 );
 
 export type Account = (

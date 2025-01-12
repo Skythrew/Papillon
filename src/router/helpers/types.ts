@@ -151,6 +151,7 @@ export type RouteParameters = {
   ExternalArdLogin: undefined;
   ExternalIzlyLogin: undefined;
   ExternalAliseLogin: undefined;
+  ExternalClicEtMiamLogin: undefined;
   IzlyActivation: { username: string; password: string };
   PriceError: { account: Client; accountId: string };
   QrcodeScanner: { accountID: string };

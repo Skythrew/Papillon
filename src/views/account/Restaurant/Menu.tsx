@@ -37,6 +37,7 @@ import { qrcodeFromExternal } from "@/services/qrcode";
 import { ReservationHistory } from "@/services/shared/ReservationHistory";
 import { getMenu } from "@/services/menu";
 import type { Menu as PawnoteMenu } from "pawnote";
+import { Dishes as ClickAndMeowDishes } from "clickandmeow";
 import { PapillonHeaderSelector } from "@/components/Global/PapillonModernHeader";
 import AnimatedNumber from "@/components/Global/AnimatedNumber";
 import { LessonsDateModal } from "../Lessons/LessonsHeader";
@@ -44,6 +45,7 @@ import { BookingTerminal, BookingDay } from "@/services/shared/Booking";
 import { bookDayFromExternal, getBookingsAvailableFromExternal } from "@/services/booking";
 import AccountButton from "@/components/Restaurant/AccountButton";
 import InsetsBottomView from "@/components/Global/InsetsBottomView";
+import { Menu as SharedMenu } from "@/services/shared/Menu";
 
 const Menu: Screen<"Menu"> = ({ route, navigation }) => {
   const theme = useTheme();
@@ -59,7 +61,7 @@ const Menu: Screen<"Menu"> = ({ route, navigation }) => {
   const [allHistories, setAllHistories] = useState<ReservationHistory[] | null>(null);
   const [allQRCodes, setAllQRCodes] = useState<string[] | null>(null);
   const [allBookings, setAllBookings] = useState<BookingTerminal[] | null>(null);
-  const [currentMenu, setCurrentMenu] = useState<PawnoteMenu | null>(null);
+  const [currentMenu, setCurrentMenu] = useState<SharedMenu | null>(null);
   const [currentWeek, setCurrentWeek] = useState<number>(0);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [pickerDate, setPickerDate] = React.useState(new Date(new Date().setHours(0, 0, 0, 0)));

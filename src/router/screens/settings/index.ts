@@ -26,6 +26,7 @@ import ExternalIzlyLogin from "@/views/settings/ExternalAccount/Izly";
 import IzlyActivation from "@/views/settings/ExternalAccount/IzlyActivation";
 import SettingsApparence from "@/views/settings/SettingsApparence";
 import ExternalAliseLogin from "@/views/settings/ExternalAccount/Alise";
+import ExternalClicEtMiamLogin from "@/views/settings/ExternalAccount/ClicEtMiam";
 
 const settingsScreens = [
   createScreen("Settings", Settings, {
@@ -104,6 +105,9 @@ const settingsScreens = [
   }),
   createScreen("ExternalAliseLogin", ExternalAliseLogin, {
     headerTitle: "Connexion à Alise",
+  }),
+  createScreen("ExternalClicEtMiamLogin", ExternalClicEtMiamLogin, {
+    headerTitle: "Connexion à Clic&Miam"
   }),
 
   createScreen("IzlyActivation", IzlyActivation, {

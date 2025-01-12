@@ -87,6 +87,18 @@ const ExternalAccountSelector: Screen<"ExternalAccountSelector"> = ({ navigation
             onPress={() => setService(AccountService.Alise)}
           />
         </Reanimated.View>
+        <Reanimated.View
+          style={{ width: "100%" }}
+          layout={LinearTransition}
+          entering={FlipInXDown.springify().delay(200)}
+        >
+          <DuoListPressable
+            leading={<Image source={require("../../../../assets/images/service_clicetmiam.png")} style={styles.image} />}
+            text="Clic&Miam"
+            enabled={service === AccountService.ClicEtMiam}
+            onPress={() => setService(AccountService.ClicEtMiam)}
+          />
+        </Reanimated.View>
       </Reanimated.View>
 
       <View style={styles.buttons}>
