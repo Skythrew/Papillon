@@ -19,6 +19,7 @@ const serviceConfig = {
   [AccountService.EcoleDirecte]: { icon: BookOpen, name: "École Directe" },
   [AccountService.Skolengo]: { icon: School, name: "Skolengo" },
   [AccountService.WebResto]: { icon: Utensils, name: "Web Resto" },
+  [AccountService.ClicEtMiam]: { icon: Utensils, name: "Clic&Miam" },
   [AccountService.Turboself]: { icon: Utensils, name: "Turboself" },
   [AccountService.ARD]: { icon: Utensils, name: "ARD" },
   [AccountService.Izly]: { icon: Utensils, name: "Izly" },

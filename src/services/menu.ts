@@ -1,5 +1,5 @@
 import { type Account, AccountService } from "@/stores/account/types";
-import { Food, Menu } from "@/services/shared/Menu";
+import { Menu } from "@/services/shared/Menu";
 
 export async function getMenu <T extends Account> (account: Account, date: Date): Promise<Menu | null> {
   switch (account.service) {
@@ -28,11 +28,11 @@ export async function getMenu <T extends Account> (account: Account, date: Date)
       return {
         date: date,
         lunch: {
-          entry: dishes.appetizers.map(dishConverter),
-          side: dishes.sideDishes.map(dishConverter),
-          main: dishes.lunchs.map(dishConverter),
-          fromage: dishes.dairyProducts.map(dishConverter),
-          dessert: dishes.desserts.map(dishConverter)
+          entry: dishes.entry.map(dishConverter),
+          side: dishes.side.map(dishConverter),
+          main: dishes.main.map(dishConverter),
+          fromage: dishes.dairy.map(dishConverter),
+          dessert: dishes.dessert.map(dishConverter)
         },
         dinner: undefined
       };

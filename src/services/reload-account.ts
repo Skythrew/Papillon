@@ -30,6 +30,9 @@ export async function reload <T extends Account> (account: T): Promise<Reconnect
       const auth = await reload(account);
       return { instance: undefined, authentication: auth };
     }
+    case AccountService.ClicEtMiam: {
+      return { instance: undefined, authentication: account.authentication }
+    }
     case AccountService.ARD: {
       const { reload } = await import("./ard/reload");
       const instance = await reload(account);
