@@ -27,6 +27,7 @@
     "axios": "^1.7.7",
     "buffer": "^6.0.3",
     "cal-parser": "^1.0.2",
+    "clicetmiam-api": "^1.0.1",
     "clickandmeow": "^1.0.0",
     "date-fns": "^3.6.0",
     "esup-multi.js": "^1.0.2",
